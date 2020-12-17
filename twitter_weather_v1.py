@@ -18,7 +18,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True,
 try:
  w, t = Adafruit_DHT.read_retry(11, 4) #Setting up the DHT11 Sensor on Raspberry Pi
 except NameError:
- data_inside = "No data from inside"
+ data_inside = "No data from the inside"
 else:
     data_inside = 'Temperature Inside ' + t + 'C\nHumidity Inside ' + w + '%'
 
@@ -41,7 +41,7 @@ else:
     print('City not found')
     exit()
 
-string_before_data = 'Data from city ' + str.title(city_name) + ' : \n'
+string_before_data = 'Data from city of ' + str.title(city_name) + ' : \n'
 
 complete_data = string_before_data + data_outside + '\n\n' + data_inside
 #Tweet data
